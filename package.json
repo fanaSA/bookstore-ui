@@ -1,0 +1,28 @@
+{
+  "name": "react-tutorial",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm-run-all build-css build-js",
+    "start-js": "react-scripts start",
+    "build-js": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "lint": "./node_modules/.bin/eslint src/**/*.js",
+    "prettier": "prettier --write --tab-width=2 --single-quote=true \"src/**/*.{js,scss}\""
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.0",
+    "node-sass-chokidar": "^1.3.0",
+    "npm-run-all": "^4.1.3",
+    "prettier": "^1.12.1"
+  }
+}
